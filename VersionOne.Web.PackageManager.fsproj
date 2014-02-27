@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b6dea607-e37b-4bba-9af8-3240c8577fbb</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>VersionOne.Web.PackagerManager</RootNamespace>
-    <AssemblyName>VersionOne.Web.PackagerManager</AssemblyName>
+    <RootNamespace>VersionOne.Web.PackageManager</RootNamespace>
+    <AssemblyName>VersionOne.Web.PackageManager</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
     <Name>VersionOne.Web.PackageManager</Name>
