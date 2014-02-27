@@ -1,4 +1,4 @@
-﻿namespace VersionOne.Web.PackagerManager
+﻿namespace VersionOne.Web.PackageManager
 
 open System
 open NuGet
