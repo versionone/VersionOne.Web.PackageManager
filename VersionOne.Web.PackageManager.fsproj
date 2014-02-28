@@ -50,12 +50,12 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="PackageManager.fs" />
-    <None Include="packages.config" />
     <Compile Include="AssemblyInfo.fs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.XmlTransform">
-      <HintPath>..\packages\Microsoft.Web.Xdt.1.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+      <HintPath>packages\Microsoft.Web.Xdt.1.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -63,7 +63,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NuGet.Core">
-      <HintPath>..\packages\NuGet.Core.2.8.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+      <HintPath>packages\NuGet.Core.2.8.0\lib\net40-Client\NuGet.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
