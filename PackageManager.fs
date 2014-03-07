@@ -15,6 +15,12 @@ type PackageModel = {
     Authors : String
 }
 
+type PackageInstalledModel = {
+    Id : String
+    Version : String
+    IsInstalled : bool
+}
+
 type PackageManager(packageFolder, installFolder, packageSearchPattern, packageManagerRepositoryUrl
 , additionalPackageRepositoryUrls : IEnumerable<string>) =
     let installMarker packageId packageVersion = installFolder + "\\" + packageId + "." + packageVersion + ".installed"
@@ -101,16 +107,9 @@ type PackageManager(packageFolder, installFolder, packageSearchPattern, packageM
         packageManager.InstallPackage(packageId, SemanticVersion(packageVersion))
         deletePreviousInstallMarkers packageId
         copyModuleToInstallFolder packageId packageVersion
-        true
+        { Id = packageId; Version = packageVersion; IsInstalled = true }
 
     member x.Uninstall packageId (packageVersion : String) =
         packageManager.UninstallPackage(packageId, SemanticVersion(packageVersion))
         deleteModuleFromInstallFolder packageId packageVersion
-        true
-
-    member x.InstallLatestTranslatorPlugins () =
-        let translatorPlugins = x.ListLatestTranslatorPlugins()
-        for key in translatorPlugins.Keys do
-            let plugin = translatorPlugins.[key]
-            if plugin.IsInstalled <> true then
-                x.Install plugin.Id plugin.Version |> ignore
+        { Id = packageId; Version = packageVersion; IsInstalled = false }
